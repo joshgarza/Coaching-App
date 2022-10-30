@@ -1,17 +1,14 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup, currentUser } = useAuth();
+  const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState('');
-
-  useEffect(() => {
-    console.log(emailRef.current.value)
-  }, [emailRef])
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -34,7 +31,7 @@ const SignUp = () => {
   return (
     <>
       <h2>SignUp</h2>
-      {currentUser && JSON.stringify(currentUser)}
+      {/* {currentUser.email} */}
       {error && console.log('error', {error})}
       <form onSubmit={onSubmit}>
         <label>
@@ -58,10 +55,10 @@ const SignUp = () => {
             ref={passwordConfirmRef}
           />
         </label>
-        <button disabled={loading} type="submit">Submit</button>
+        <button disabled={loading} type="submit">Sign up</button>
       </form>
       <div>
-        Already have an account? Log In
+        Already have an account? <Link to='/login'>Log in</Link>
       </div>
     </>
   )
