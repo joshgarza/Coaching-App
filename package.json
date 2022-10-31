@@ -1,0 +1,19 @@
+{
+  "name": "coaching-app",
+  "version": "1.0.0",
+  "description": "Personal project for Hack Reactor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshgarza/Coaching-App.git"
+  },
+  "author": "Josh Garza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshgarza/Coaching-App/issues"
+  },
+  "homepage": "https://github.com/joshgarza/Coaching-App#readme"
+}
