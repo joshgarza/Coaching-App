@@ -44,39 +44,44 @@ const UpdateProfile = () => {
 
   return (
     <>
-      <h2>Update Profile</h2>
-      {error && console.log('error', {error})}
-      <form onSubmit={onSubmit}>
-        <label>
-          Email:
-          <input
-            type="email"
-            ref={emailRef}
-            defaultValue={currentUser.email}
-            placeholder={currentUser.email}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            ref={passwordRef}
-            placeholder="Leave blank to keep the same"
-          />
-        </label>
-        <label>
-          Password Confirmation:
-          <input
-            type="password"
-            ref={passwordConfirmRef}
-            placeholder="Leave blank to keep the same"
-          />
-        </label>
-        <button disabled={loading} type="submit">Update Profile</button>
-      </form>
-      <div>
-        <Link to='/'>Cancel</Link>
-      </div>
+      {currentUser &&
+        <>
+
+          <h2>Update Profile</h2>
+          {error && console.log('error', {error})}
+          <form onSubmit={onSubmit}>
+            <label>
+              Email:
+              <input
+                type="email"
+                ref={emailRef}
+                defaultValue={currentUser.email}
+                placeholder={currentUser.email}
+              />
+            </label>
+            <label>
+              Password:
+              <input
+                type="password"
+                ref={passwordRef}
+                placeholder="Leave blank to keep the same"
+              />
+            </label>
+            <label>
+              Password Confirmation:
+              <input
+                type="password"
+                ref={passwordConfirmRef}
+                placeholder="Leave blank to keep the same"
+              />
+            </label>
+            <button disabled={loading} type="submit">Update Profile</button>
+          </form>
+          <div>
+            <Link to='/'>Cancel</Link>
+          </div>
+        </>
+      }
     </>
   )
 }
