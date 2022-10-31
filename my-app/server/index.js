@@ -7,11 +7,20 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.static('../src'));
+app.use(express.static('./client/dist'));
 
 //PRODUCTS
-app.get('/products', (req, res) => {
-  axios.get(`${url}/products/?count=50`, header)
-    .then(result => res.status(200).send(result.data));
+app.post('/signup', (req, res) => {
+  // send req.body to model
+
+
+  res.status(200).send('Client signup data to be sent');
+});
+
+app.get('/login/:id', (req, res) => {
+  // send req.body to model
+  console.log(req.params.id);
+  res.status(200).send(req.params.id);
 });
 
 const PORT = 3001;
